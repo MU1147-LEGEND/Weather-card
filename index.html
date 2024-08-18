@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/output.css">
+    <title>Weather</title>
+</head>
+<body class="select-none">
+    <!-- full page div -->
+    <!-- weather logo and search bar-icon -->
+    <div class="bg-slate-500 m-auto px-5 py-10 h-screen">
+        <div class="top flex flex-col gap-4 justify-between items-center md:flex-row shadow-lg p-4">
+            <h3 class="text-white cursor-pointer bg-transparent font-bold text-xl shadow-lg px-3"><span class="text-blue-700">W</span>eather<br/>Dashboar<span class="text-blue-700">d</span></h3>
+            <span class="bg-gray-300 px-3 py-1.5 rounded-md "><input class="bg-transparent focus:outline-none" type="text" placeholder="Search Location" value="Dhaka"/> <i class="fa-solid fa-magnifying-glass cursor-pointer"></i></span>
+        </div>
+        <!-- weather card -->
+        <div class="main m-auto mt-10 md:mt-20 bg-black/10 shadow-lg px-10 py-8 rounded-lg text-white md:flex md:max-w-[780px] justify-around items-center ">
+            <!-- weather card left section -->
+            <div class="left">
+                <i class="fa-solid fa-cloud-sun text-2xl"></i>
+                <p class="text-4xl md:text-6xl mb-4 font-semibold"><i class="fa-solid fa-thermometer-half text-4xl font-thin"></i>25°</p>
+                <p class="text-3xl md:text-4xl mb-2 font-semibold"><i class="fa-solid fa-location-dot"></i> <span>Dhaka</span></p>
+                <p class="text-xl"><i class="fa-solid fa-calendar"></i> <span>Monday, 12:00 PM</span></p>
+            </div>
+            <!-- weather card right section -->
+            <div class="right mt-10">
+                <div class=" space-x-4 space-y-3 md:space-y-6">
+                    <h3 class="text-white font-bold text-xl md:text-2xl text-center">The Climate is Mist</h3>
+                    <div class="flex justify-between items-center text-lg">
+                        <span>Temp max</span>
+                        <span>28.43° <i class="fa-solid fa-temperature-high text-red-700"></i></span>
+                    </div>
+                    <div class="flex justify-between items-center text-lg">
+                        <span>Temp min</span>
+                        <span>18.33° <i class="fa-solid fa-temperature-low text-blue-600"></i></span>
+                    </div>
+                    <div class="flex justify-between items-center text-lg">
+                        <span>Humadity</span>
+                        <span>40% <i class="fa-solid fa-droplet text-white"></i></span>
+                    </div>
+                    <div class="flex justify-between items-center text-lg">
+                        <span class="">Cloudy</span>
+                        <span>5% <i class="fa-solid fa-cloud-moon text-gray-200"></i></span>
+                    </div>
+                    <div class="flex justify-between items-center text-lg">
+                        <span>Wind</span>
+                        <span>3.6km/h <i class="fa-solid fa-wind text-white"></i></span>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <!-- fontawesome integration -->
+    <script src="https://kit.fontawesome.com/5ad6d6220d.js" crossorigin="anonymous"></script>
+</body>
+</html>
