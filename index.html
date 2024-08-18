@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/output.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./cloudy.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./src/output.css" />
     <title>Weather</title>
 </head>
-<body class="select-none">
+<body class="select-none bg-center bg-cover" style="background-image:linear-gradient(rgba(78, 78, 78, 0.705), rgba(97, 97, 97, 0.733)), url(../mobile-bg.png)">
     <!-- full page div -->
     <!-- weather logo and search bar-icon -->
-    <div class="bg-slate-500 m-auto px-5 py-10">
+    <div class="m-auto px-5 pb-10 ">
         <div class="top flex flex-col gap-4 justify-between items-center md:flex-row shadow-lg p-4">
             <h3 class="text-white cursor-pointer bg-transparent font-bold text-xl shadow-lg px-3"><span class="text-blue-700">W</span>eather<br/>Dashboar<span class="text-blue-700">d</span></h3>
             <span class="bg-gray-300 px-3 py-1.5 rounded-md "><input class="bg-transparent focus:outline-none" type="text" placeholder="Search Location" value="Dhaka"/> <i class="fa-solid fa-magnifying-glass cursor-pointer"></i></span>
         </div>
         <!-- weather card -->
-        <div class="main m-auto mt-10 md:mt-20 bg-black/10 shadow-lg px-10 py-8 rounded-lg text-white md:flex md:max-w-[780px] justify-around items-center ">
+        <div class="main m-auto mt-10 md:mt-20 bg-black/30 shadow-lg px-10 py-8 rounded-lg md:rounded-xl text-white md:flex md:max-w-[780px] justify-around items-center ">
             <!-- weather card left section -->
             <div class="left">
                 <i class="fa-solid fa-cloud-sun text-2xl"></i>
