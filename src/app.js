@@ -9,6 +9,7 @@ const humidity = document.getElementById("humadity");
 const cloudy = document.getElementById("cloudy");
 const windSpeed = document.getElementById("wind-speed");
 const warning = document.getElementById("warning-msg");
+const loader = document.getElementById("loader");
 
 const API_KEY = "b466db51ed00e9210dd0a680729074f5";
 
@@ -16,10 +17,12 @@ let fetchedWeather;
 
 navigator.geolocation.getCurrentPosition((position) => {
     let { latitude, longitude } = position.coords;
-
+    
+    loader.classList.add("flex");
     (async () => {
         fetchedWeather = await fetchingWeather(latitude, longitude);
         getWeather(fetchedWeather);
+        loader.classList.remove("flex");
     })();
 });
 
@@ -44,11 +47,11 @@ function getWeather(fetchedWeather) {
     cloudy.innerText = `${fetchedWeather.clouds.all}%`;
     // windspeed
     windSpeed.innerText = `${fetchedWeather.wind.speed}`;
-
 }
 
 // applying this debounce on search
 function debArg(city) {
+    loader.classList.add("flex");
     (async () => {
         fetchedWeather = await fetchingWeather("", "", city);
         try {
@@ -57,6 +60,9 @@ function debArg(city) {
             warning.classList.add("py-2");
             warning.innerText = `The city ${city} is invalid`;
             warning.classList.add("flicker");
+        }
+        finally{
+            loader.classList.remove("flex");
         }
         
     })();
