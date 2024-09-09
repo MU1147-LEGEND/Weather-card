@@ -1,5 +1,7 @@
+"use strict";
 const weatherIcon = document.getElementById("weather-icon");
 const weatherTemp = document.getElementById("current-weather-temp");
+const tempStatusIcon = document.getElementById("main-temp-icon");
 const searchBar = document.getElementById("searchCity");
 const weatherStatus = document.getElementById("climate-status");
 const weatherCity = document.getElementById("city");
@@ -10,6 +12,7 @@ const cloudy = document.getElementById("cloudy");
 const windSpeed = document.getElementById("wind-speed");
 const warning = document.getElementById("warning-msg");
 const loader = document.getElementById("loader");
+const homeIcon = document.getElementById("webpage-icon");
 
 const API_KEY = "b466db51ed00e9210dd0a680729074f5";
 
@@ -27,6 +30,22 @@ navigator.geolocation.getCurrentPosition((position) => {
 });
 
 function getWeather(fetchedWeather) {
+    if(fetchedWeather.main.temp > 300){
+        tempStatusIcon.classList.add("fa-temperature-high");
+        tempStatusIcon.classList.add("text-red-500");
+        tempStatusIcon.classList.remove("text-green-500");
+        tempStatusIcon.classList.remove("text-blue-500");
+    }else if(fetchedWeather.main.temp < 290){
+        tempStatusIcon.classList.add("fa-temperature-low");
+        tempStatusIcon.classList.add("text-blue-500");
+        tempStatusIcon.classList.remove("text-red-500");
+        tempStatusIcon.classList.remove("text-green-500");
+    }else{
+        tempStatusIcon.classList.add("fa-temperature-medium");
+        tempStatusIcon.classList.add("text-green-500");
+        tempStatusIcon.classList.remove("text-red-500");
+        tempStatusIcon.classList.remove("text-blue-500");
+    }
     // weather status
     weatherStatus.innerText = fetchedWeather.weather[0].main;
     //weather temp
@@ -142,3 +161,8 @@ function showDate() {
 showDate();
 setInterval(showDate, 1000);
 // show real time and day end
+ 
+// refresh when clicked on website icon
+homeIcon.addEventListener("click", () => {
+    location.reload();
+});
